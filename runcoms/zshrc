@@ -11,3 +11,22 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+alias rspec='bundle exec rspec'
+alias fuck='$(thefuck $(fc -ln -1))'
+
+export ALTERNATE_EDITOR=''
+export EDITOR='emacsclient -c'
+export PATH="/usr/local/heroku/bin:$PATH"
+alias e="emacsclient -nw"
+
+# history completion on up and down arrows
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey ${terminfo[kcuu1]} up-line-or-beginning-search # Up
+bindkey ${terminfo[kcud1]} down-line-or-beginning-search # Down
+
+# NVM
+. ~/.nvm/nvm.sh
